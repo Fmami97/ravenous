@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SearchBar.css";
 
-export function SearchBar({ name, handleNameChange, location, handleLocationChange, sortType, handleSortChange, handleSubmit }) {
+export const SearchBar = React.memo(({ setBusinesses }) => {
+
+    const [name, setName] = useState("");
+    const [location, setLocation] = useState("");
+    const [sortType, setSortType] = useState("best_match")
+
+    const handleNameChange = (e) => {
+        e.preventDefault();
+        setName(e.target.value);
+    }
+
+    const handleLocationChange = (e) => {
+        e.preventDefault();
+        setLocation(e.target.value);
+    }
+
+    const handleSortChange = (e) => {
+        e.preventDefault();
+        setSortType(e.target.value);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // alert(`Searching Yelp with ${name}, ${location}, ${sortType}`);
+        console.log(`Searching Yelp with ${name}, ${location}, ${sortType}`);
+        setBusinesses([]);
+    };
 
     return (
-        <form action="" method="POST" onSubmit={handleSubmit}>
+        <form action="#" onSubmit={handleSubmit}>
             <div className="rowContainer">
                 <button className={sortType === "best_match" ? "btn_selected" : "btn_select"} name="best_match" value="best_match" onClick={handleSortChange}>Best Match</button>
                 <button className={sortType === "rating" ? "btn_selected" : "btn_select"} name="rating" value="rating" onClick={handleSortChange}>Highest Rated</button>
@@ -17,4 +43,4 @@ export function SearchBar({ name, handleNameChange, location, handleLocationChan
             <input type="submit" value="Let's Go" />
         </form>
     )
-}
+});

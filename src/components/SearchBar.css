@@ -17,8 +17,9 @@ form div{
 form .rowContainer{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap:2px;
+    justify-content: space-evenly;
 }
 
 /* Button Styles */
@@ -27,7 +28,7 @@ button {
     border: none;
     border-radius: 6px;
     font-weight: bold;
-    width:175px;
+    width:150px;
     height:30px;
     line-height: 30px;
     cursor: pointer;
@@ -42,7 +43,7 @@ button {
 .btn_select:hover{
     background-color: var(--secondary-color);
     font-size: 13pt;
-    transition: 0.3s ease-in;
+    transition: 0.3s ease-in-out;
 }
 .btn_select{
     background-color: var(--primary-color);

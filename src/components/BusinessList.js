@@ -1,5 +1,5 @@
 import React from "react";
-import { Business } from "./Business";
+import Business from "./Business";
 import "./BusinessList.css";
 
 export const defaultBusinesses = [
@@ -60,10 +60,21 @@ export const defaultBusinesses = [
     }
 ]
 
-export function BusinessList({ businesses = defaultBusinesses }) {
+export const BusinessList = React.memo(({ businesses }) => {
     return (
         <div className="businessList">
-            {businesses.map(business => <Business key={business.name} {...business}></Business>)}
+            {
+                (businesses.length === 0) ?
+                    <div className="emptyList">
+                        <div>
+                            <h2>Whoops !</h2>
+                            <p>No matching results with provided filters</p>
+                        </div>
+                    </div>
+                    :
+                    businesses.map(business => <Business key={business.name} {...business}></Business>)
+
+            }
         </div>
     )
-}
+});

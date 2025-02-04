@@ -1,6 +1,7 @@
+import React from "react";
 import "./HeaderComponent.css";
-export function HeaderComponent({ title = "Ravenous" }) {
+export const HeaderComponent = React.memo(({ title = "Ravenous" }) => {
     return (<header>
         {title}
     </header>)
-}
+});
