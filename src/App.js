@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { SearchBar } from "./components/SearchBar";
+import { BusinessList, defaultBusinesses } from "./components/BusinessList";
+import { HeaderComponent } from "./components/HeaderComponent";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export function App() {
+    const businesses = defaultBusinesses;
+    const [name, setName] = useState("");
+    const [location, setLocation] = useState("");
+    const [sortType, setSortType] = useState("")
+
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+    }
+    const handleLocationChange = (e) => {
+        setLocation(e.target.value);
+    }
+    const handleSortChange = (e) => {
+        setSortType(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
+    return (
+        <>
+            <HeaderComponent />
+            <SearchBar props={{ name, handleNameChange, location, handleLocationChange, sortType, handleSortChange, handleSubmit }} />
+            <BusinessList businesses={businesses} />
+        </>
+    )
 }
-
-export default App;

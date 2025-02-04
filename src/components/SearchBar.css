@@ -1,0 +1,77 @@
+:root{
+    --primary-color: #3B82F6
+}
+form{
+    width: fit-content;
+    margin:auto;
+    background-color: var(--background-color);
+    border: var(--border-color) 5px ridge;
+    padding:10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+form div{
+    margin-bottom: 10px;
+}
+
+form .rowContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap:2px;
+}
+
+/* Button Styles */
+button {
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    width:175px;
+    height:30px;
+    line-height: 30px;
+    cursor: pointer;
+    font-size: 12pt;
+    transition: 0.3s ease-out;
+}
+
+
+.btn_selected{
+    background-color: var(--secondary-color);
+}
+.btn_select:hover{
+    background-color: var(--secondary-color);
+    font-size: 13pt;
+    transition: 0.3s ease-in;
+}
+.btn_select{
+    background-color: var(--primary-color);
+}
+
+
+input[type=submit] {
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width:80%;
+    height:45px; 
+    background-color: var(--primary-color);
+    font-size: 20pt;
+    line-height: 45px;
+    transition:  0.3s ease-out;
+}
+input[type=submit]:hover{
+    background-color: var(--secondary-color);
+    font-size: 22pt;
+    transition: 0.3s ease-in;
+}
+
+input[type=text]{
+    width:150px;
+    height:30px;
+    font-size:12pt;
+    /*background-color: var(--surface-color); */
+    margin: 0 10px 0 10px;
+}

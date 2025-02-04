@@ -1,0 +1,8 @@
+.businessList{
+    display:flex;
+    width:80%;
+    margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:15px;
+}
