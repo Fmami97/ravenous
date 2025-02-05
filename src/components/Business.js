@@ -2,11 +2,12 @@ import React from "react";
 import "./Business.css";
 import defaultImage from "../resources/pizza_default.png"
 
-function Business({ image, name, address, city, state, zipcode, category, rating, review_count }) {
+function Business({ image_url, name, address, city, state, zipcode, category, rating, review_count }) {
+
 
     return (
         <div className="business">
-            <img src={defaultImage} alt="not found" />
+            <img src={(image_url && image_url.length > 0) ? image_url : defaultImage} alt="not found" />
             <h3>{name}</h3>
             <div className="rowContainer">
                 <div>

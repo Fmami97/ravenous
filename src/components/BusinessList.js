@@ -4,7 +4,8 @@ import "./BusinessList.css";
 
 export const defaultBusinesses = [
     {
-        image: "../resources/pizza_default.png",
+        id: 0,
+        image_url: null,
         name: "MarginOtto Pizzeria",
         address: "1010 Paddingtton Way",
         city: "Bordertown",
@@ -15,7 +16,8 @@ export const defaultBusinesses = [
         review_count: 10
     },
     {
-        image: "../resources/pizza_default.png",
+        id: 1,
+        image_url: null,
         name: "MarginOtto Foccaccieria",
         address: "1010 Paddingtton Way",
         city: "Bordertown",
@@ -26,7 +28,8 @@ export const defaultBusinesses = [
         review_count: 20
     },
     {
-        image: "../resources/pizza_default.png",
+        id: 2,
+        image_url: null,
         name: "MarginOtto",
         address: "1010 Paddingtton Way",
         city: "Bordertown",
@@ -37,7 +40,8 @@ export const defaultBusinesses = [
         review_count: 40
     },
     {
-        image: "../src/resources/pizza_default.png",
+        id: 3,
+        image_url: null,
         name: "MarginOtto Piadineria",
         address: "1010 Paddingtton Way",
         city: "Bordertown",
@@ -48,7 +52,8 @@ export const defaultBusinesses = [
         review_count: 90
     },
     {
-        image: "../resources/pizza_default.png",
+        id: 4,
+        image_url: null,
         name: "MarginOtto Spaghetteria",
         address: "1010 Paddingtton Way",
         city: "Bordertown",
@@ -72,7 +77,7 @@ export const BusinessList = React.memo(({ businesses }) => {
                         </div>
                     </div>
                     :
-                    businesses.map(business => <Business key={business.name} {...business}></Business>)
+                    businesses.map(business => <Business key={business.id} {...business}></Business>)
 
             }
         </div>
